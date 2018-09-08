@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class HomeObserverBackendApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(HomeObserverBackendApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(HomeObserverBackendApplication.class, args);
+    }
 }
