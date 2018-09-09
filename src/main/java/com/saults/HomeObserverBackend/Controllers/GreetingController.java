@@ -1,5 +1,6 @@
-package com.saults.HomeObserverBackend;
+package com.saults.HomeObserverBackend.Controllers;
 
+import com.saults.HomeObserverBackend.Greeting;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
