@@ -1,0 +1,5 @@
+---
+applications:
+- name: homeobserver
+  buildpack: java_buildpack
+  path: target/Home-Observer-Backend-0.0.1-SNAPSHOT.jar
