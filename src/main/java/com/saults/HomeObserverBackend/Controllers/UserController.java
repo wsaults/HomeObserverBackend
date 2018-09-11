@@ -2,11 +2,17 @@ package com.saults.HomeObserverBackend.Controllers;
 
 import com.saults.HomeObserverBackend.Entities.User;
 import com.saults.HomeObserverBackend.Repositories.UserRepository;
+import org.springframework.hateoas.Resource;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
+
 @RestController
+@RequestMapping(produces = {MediaType.APPLICATION_JSON_VALUE, "application/hal+json"})
 public class UserController {
 
     private final UserRepository repository;
@@ -25,10 +31,21 @@ public class UserController {
         return repository.save(newUser);
     }
 
+    // Old
+//    @GetMapping("/users/{id}")
+//    User one(@PathVariable Long id) throws UserNotFoundException {
+//        return repository.findById(id)
+//                .orElseThrow(() -> new UserNotFoundException(id));
+//    }
+
     @GetMapping("/users/{id}")
-    User one(@PathVariable Long id) throws UserNotFoundException {
-        return repository.findById(id)
+    Resource<User> one(@PathVariable Long id) throws UserNotFoundException {
+        User user = repository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException(id));
+
+        return new Resource<>(user,
+                linkTo(methodOn(UserController.class).one(id)).withSelfRel(),
+                linkTo(methodOn(UserController.class).all()).withRel("users"));
     }
 
     @PutMapping("/users/{id}")
