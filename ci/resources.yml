@@ -1,8 +1,0 @@
-# ci/resources.yml
-
-resources:
-- name: source-code
-  type: git
-  source:
-    uri: https://github.com/wsaults/HomeObserverBackend.git
-    branch: master
