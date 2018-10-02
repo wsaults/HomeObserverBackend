@@ -17,14 +17,14 @@ resources:
     space: {{cf-space}}
 
 jobs:
-  - name: build
-    public: true
-    plan:
-      - get: source-code
-        trigger: true
-      - task: build
-        file: source-code/ci/build.yml
-      - put: cf
-        params:
-          manifest: source-code/manifest.yml
-          path: build-output/Home-Observer-Backend-0.0.1-SNAPSHOT.jar
+- name: build
+  public: true
+  plan:
+  - get: source-code
+    trigger: true
+  - task: build
+    file: source-code/ci/build.yml
+  - put: cf
+    params:
+      manifest: source-code/manifest.yml
+      path: build-output/Home-Observer-Backend-0.0.1-SNAPSHOT.jar
