@@ -14,4 +14,5 @@ image_resource:
 #    - name: build-output
 
   run:
-    path: source-code/ci/build.sh
+    path: sh
+    args: [./source-code/ci/build.sh]
