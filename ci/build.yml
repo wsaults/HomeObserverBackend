@@ -7,11 +7,11 @@ image_resource:
     repository: openjdk
     tag: '8-jdk-alpine'
 
-  inputs:
-    - name: source-code
+inputs:
+- name: source-code
 
-  outputs:
-    - name: build-output
+outputs:
+- name: build-output
 
-  run:
-    path: source-code/ci/build.sh
+run:
+  path: source-code/ci/build.sh
