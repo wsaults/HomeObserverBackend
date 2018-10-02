@@ -1,3 +1,4 @@
+#fly -t ci set-pipeline -p homeobserver -c pipeline.yml -l pipeline-secrets.yml
 ---
 resources:
 - name: source-code
