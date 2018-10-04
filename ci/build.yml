@@ -10,6 +10,9 @@ image_resource:
 inputs:
 - name: source-code
 
+caches:
+- name: source-code/.m2repository
+
 outputs:
 - name: build-output
 
