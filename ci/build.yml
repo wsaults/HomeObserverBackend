@@ -11,7 +11,7 @@ inputs:
 - name: source-code
 
 caches:
-- name: source-code/.m2repository
+- path: source-code/.m2repository
 
 outputs:
 - name: build-output
